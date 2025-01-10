@@ -8,7 +8,14 @@
 
 {% block content %}
 <!-- Showcase Section -->
-<section id="showcase" style="background: url('{% static 'img/showcase.jpg' %}') no-repeat center center fixed; background-size: cover; min-height: 50vh; color: #fff; padding-top: 6rem; text-align: center;">
+<section id="showcase" 
+  style="
+    background: url('{% static 'img/showcase.jpg' %}') no-repeat center center fixed; 
+    background-size: cover; 
+    min-height: 50vh; 
+    color: #fff; 
+    padding-top: 6rem; 
+    text-align: center;">
   <div class="container text-center">
     <div class="home-search p-5">
       <div class="overlay p-5" style="background: rgba(0, 0, 0, 0.5);">
@@ -156,5 +163,24 @@
     </div>
   </div>
 </section>
+
+<!-- Responsive CSS for Showcase Section -->
+<style>
+  /* Responsive background for the showcase section */
+  @media (max-width: 768px) {
+    #showcase {
+      background: url('{% static 'img/showcase.jpg' %}') no-repeat center center;
+      background-attachment: scroll;
+      background-size: contain;
+    }
+  }
+
+  @media (max-width: 576px) {
+    #showcase {
+      background-size: cover;
+      padding-top: 4rem;
+    }
+  }
+</style>
 
 {% endblock %}
